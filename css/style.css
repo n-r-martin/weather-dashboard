@@ -1,7 +1,49 @@
+header.navbar {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
+    color: white;
+}
+
+.navbar-light span.navbar-brand  {
+    color: white;
+}
+
+header i {
+    margin-right: .5rem;
+}
+
 main {
     margin-top: 2rem;
 }
 
+h5#city-name {
+    height: 48px;
+}
+
 ul.list-group-flush {
     width: 50%;
+}
+
+span.list-title {
+    font-weight: 700;
+    margin-right: 1rem;
+}
+
+span#uv-index-value {
+    padding: .25rem .5rem;
+    border-radius: 5px;
+}
+
+.low-risk {
+    background-color: #17b978;
+    color: white;
+}
+
+.moderate-risk {
+    background-color: #ffd717;
+}
+
+.high-risk {
+    background-color: #f23557;
+    color: white;
 }
