@@ -1,0 +1,3 @@
+# Ignore config.js so the API Key is not exposed
+
+config.js

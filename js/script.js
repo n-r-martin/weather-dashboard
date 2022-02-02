@@ -8,9 +8,7 @@ const windElement = $('#wind-value');
 const humidityElement = $('#humidity-value');
 const uvIndexElement = $('#uv-index-value');
 
-
-const apiKey = '7f18634c0f8ab52c9c31e83595e4f3b8';
-
+var apiKey = config.apiKey;
 
 function updateCity(){
     let city = cityInput.val();
