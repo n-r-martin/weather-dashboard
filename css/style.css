@@ -16,8 +16,33 @@ main {
     margin-top: 2rem;
 }
 
+button#city-search-btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+ul#recent-cities-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+div#current-weather-main-info {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: baseline;
+    padding-left: .8rem;
+    margin: 1rem 0;
+}
+
 h5#city-name {
     height: 48px;
+    display: inline;
 }
 
 ul.list-group-flush {

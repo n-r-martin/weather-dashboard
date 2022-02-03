@@ -33,6 +33,16 @@
                             <button class="btn btn-primary" id="city-search-btn" type="submit">Search</button>
                         </form>
                     </div>
+
+                    <div class="card-body" id="recent-cities-container">
+                        <ul id="recent-cities-list">
+                            <li><button class="btn btn-secondary">Button</button></li>
+                            <li><button class="btn btn-secondary">Button</button></li>
+                            <li><button class="btn btn-secondary">Button</button></li>
+                            <li><button class="btn btn-secondary">Button</button></li>
+                            <li><button class="btn btn-secondary">Button</button></li>
+                        </ul>
+                    </div>
                   </div>
               </div>
               <div class="col-8">
@@ -41,7 +51,11 @@
                       <span id='current-city'>Current Weather</span>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title display-5" id='city-name'>¯\_(ツ)_/¯</h5>
+                        <div id="current-weather-main-info">
+                            <h5 class="card-title display-5" id='city-name'>¯\_(ツ)_/¯</h5>
+                            <span id='today-date'></span>
+                            <span id='today-weather-icon'></span>
+                        </div>
                        <ul class="list-group list-group-flush">
                            <li class="list-group-item"><span class="list-title">Temp</span><span id="temp-value"></span></li>
                            <li class="list-group-item"><span class="list-title">Wind</span><span id="wind-value"></span></li>

@@ -2,6 +2,13 @@ const searchBtn = $('#city-search-btn');
 const cityInput = $('#city-input');
 const cityElement = $('#city-name');
 
+const todayDate = $('#today-date');
+const currentDate = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+todayDate.text(currentDate);
+
+const todayWeatherIcon = $('#today-weather-icon');
+const currentWeatherIcon = document.createElement('img');
+
 
 const tempElement = $('#temp-value');
 const windElement = $('#wind-value');
@@ -12,7 +19,7 @@ var apiKey = '7f18634c0f8ab52c9c31e83595e4f3b8';
 
 function updateCity(){
     let city = cityInput.val();
-    let geoCodeApiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&appid=' + apiKey;
+    let geoCodeApiUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&appid=' + apiKey;
     fetch(geoCodeApiUrl)
   .then(function (response) {
     return response.json();
@@ -36,7 +43,13 @@ function updateCity(){
         .then(function (data) {
             console.log(data);
 
+            todayWeatherIcon.remove(currentWeatherIcon);
+            let iconcode = data.current.weather[0].icon;
+            iconUrl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+        
+            currentWeatherIcon.src = iconUrl
             
+            todayWeatherIcon.append(currentWeatherIcon);
 
             tempElement.text(data.current.temp + ' \u00B0F');
             windElement.text(data.current.wind_speed + ' mph');
@@ -57,7 +70,4 @@ function updateCity(){
   searchBtn.on('click', function (event) {
       event.preventDefault();
       updateCity();
-  })
-
-
-  
+  });
