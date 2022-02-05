@@ -5,12 +5,26 @@ const cityInput = $('#city-input');
 const cityElement = $('#city-name');
 const recentCitiesList = $('#recent-cities-list');
 
-const todayDate = $('#today-date');
-const currentDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
-todayDate.text(currentDate);
+
+// Loop to create the dates
+for (let d = 0; d <= 5; d++) {
+    let dateElement = document.getElementById([d] + '-days-out');
+
+    // First formatted with full month name
+    if (d === 0) {
+        let date = moment().format('LL');
+        dateElement.textContent = date; 
+    // Five-day forecast dates formatted in short form
+    } else {
+        let date = moment().add(d, 'days').format('L');  
+        dateElement.textContent = date; 
+    }    
+}
+
 
 const todayWeatherIcon = $('#today-weather-icon');
 const currentWeatherIcon = document.createElement('img');
+
 
 const tempElement = $('#temp-value');
 const windElement = $('#wind-value');
@@ -95,6 +109,24 @@ function updateCity() {
                         uvIndexElement.attr('class', 'moderate-risk');
                     } else if (data.current.uvi > 5) {
                         uvIndexElement.attr('class', 'high-risk');
+                    }
+                    
+                    // Empty the icons on api call so they dont stack on each other
+                    $('.future-icon').empty();
+
+                    for (let d = 1; d <= 5; d++) {
+                        let forecastDetailsList = document.getElementById(d + '-days-out-forecast');
+                        console.log(forecastDetailsList);
+                        let futureIconCode = data.daily[d].weather[0].icon;
+                        futureIconUrl = "http://openweathermap.org/img/w/" + futureIconCode + ".png";
+                        console.log(futureIconUrl);
+                        let futureWeatherIcon = document.createElement('img');
+                        futureWeatherIcon.src = futureIconUrl;
+                        console.log(forecastDetailsList.querySelector('.future-icon-'));
+                        forecastDetailsList.querySelector('.future-icon').append(futureWeatherIcon); 
+                        forecastDetailsList.querySelector('.future-temp').textContent = data.daily[d].temp.max + ' \u00B0F';
+                        forecastDetailsList.querySelector('.future-wind').textContent = data.daily[d].wind_speed + 'mph';
+                        forecastDetailsList.querySelector('.future-humidity').textContent = data.daily[d].humidity + ' %';
                     }
                 })
         });

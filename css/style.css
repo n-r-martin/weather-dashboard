@@ -21,8 +21,12 @@ button#city-search-btn {
     margin-top: 1rem;
 }
 
-ul#recent-cities-list {
+ul {
     list-style-type: none;
+    padding-left: 0;
+}
+
+ul#recent-cities-list {
     margin: 0;
     padding: 0;
     display: flex;
@@ -72,3 +76,28 @@ span#uv-index-value {
     background-color: #f23557;
     color: white;
 }
+
+div#five-day-forecast-row {
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+
+div.forecast-card {
+    width: 180px;
+}
+
+h6 {
+    margin-bottom: 1rem;
+}
+
+.forecast-card ul li {
+    margin-bottom: .5rem;
+}
+
+.forecast-card ul li span {
+    margin-right: .2rem;
+}
+
+
+
+

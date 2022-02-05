@@ -18,6 +18,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7240b07196.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
 
     <main class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card">
                     <div class="card-header">
                         Search for a city...
@@ -47,15 +48,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-9">
                 <div class="card">
                     <div class="card-header">
-                        <span id='current-city'>Current Weather</span>
+                        <span id='current-city'>Weather Report</span>
                     </div>
                     <div class="card-body">
                         <div id="current-weather-main-info">
                             <h5 class="card-title display-5" id='city-name'>¯\_(ツ)_/¯</h5>
-                            <span id='today-date'></span>
+                            <span id='0-days-out'></span>
                             <span id='today-weather-icon'></span>
                         </div>
                         <ul class="list-group list-group-flush">
@@ -68,6 +69,85 @@
                             <li class="list-group-item"><span class="list-title">UV Index</span><span
                                     id="uv-index-value"></span></li>
                         </ul>
+                    </div>
+                    
+                    <div class="row" id="five-day-forecast-row">
+                        <h6>Five Day Forecast</h5>
+                        <div class="forecast-card">
+                            <div class="card">
+                                <div class="card-header">
+                                    <span id='1-days-out'></span>
+                                </div>
+                                <div class="card-body">
+                                    <ul id="1-days-out-forecast">
+                                        <li class="future-icon"></li>
+                                        <li><span>Temp:</span><span class="future-temp"></span></li>
+                                        <li><span>Wind:</span><span class="future-wind"></span></li>
+                                        <li><span>Humidity:</span><span class="future-humidity"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="forecast-card">
+                            <div class="card">
+                                <div class="card-header">
+                                    <span id='2-days-out'></span>
+                                </div>
+                                <div class="card-body">
+                                    <ul id="2-days-out-forecast">
+                                        <li class="future-icon"></li>
+                                        <li><span>Temp:</span><span class="future-temp"></span></li>
+                                        <li><span>Wind:</span><span class="future-wind"></span></li>
+                                        <li><span>Humidity:</span><span class="future-humidity"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="forecast-card">
+                            <div class="card">
+                                <div class="card-header">
+                                    <span id='3-days-out'></span>
+                                </div>
+                                <div class="card-body">
+                                    <ul id="3-days-out-forecast">
+                                        <li class="future-icon"></li>
+                                        <li><span>Temp:</span><span class="future-temp"></span></li>
+                                        <li><span>Wind:</span><span class="future-wind"></span></li>
+                                        <li><span>Humidity:</span><span class="future-humidity"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="forecast-card">
+                            <div class="card">
+                                <div class="card-header">
+                                    <span id='4-days-out'></span>
+                                </div>
+                                <div class="card-body">
+                                    <ul id="4-days-out-forecast">
+                                        <li class="future-icon"></li>
+                                        <li><span>Temp:</span><span class="future-temp"></span></li>
+                                        <li><span>Wind:</span><span class="future-wind"></span></li>
+                                        <li><span>Humidity:</span><span class="future-humidity"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="forecast-card">
+                            <div class="card">
+                                <div class="card-header">
+                                    <span id='5-days-out'></span>
+                                </div>
+                                <div class="card-body">
+                                    <ul id="5-days-out-forecast">
+                                        <li class="future-icon"></li>
+                                        <li><span>Temp:</span><span class="future-temp"></span></li>
+                                        <li><span>Wind:</span><span class="future-wind"></span></li>
+                                        <li><span>Humidity:</span><span class="future-humidity"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
